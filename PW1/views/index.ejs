@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calendrier</title>
+    </head>
+
+    <body>
+            <% for(result of calendar){ %>
+                <%
+                result.start = new Date(result.start)
+                result.end = new Date(result.end)
+                %>
+                <li data-event-id='<%=result.id%>'><%= result.title %> | <%= result.id %> | <%=result.start.toLocaleDateString("fr-FR")%> | FROM <%=result.start.getHours()+':'+(result.start.getMinutes()?result.start.getMinutes():'00')%> TO <%=result.end.getHours()+':'+(result.end.getMinutes()?result.end.getMinutes():'00')%></li>
+            <%  } %>
+    </body>
+</html>
