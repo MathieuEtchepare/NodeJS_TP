@@ -1,0 +1,16 @@
+{
+  "name": "pw3",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "csv-parser": "^2.3.1",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "mongoose": "^5.7.8",
+    "morgan": "~1.9.1"
+  }
+}

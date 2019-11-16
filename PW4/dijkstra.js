@@ -81,17 +81,17 @@ class Dijkstra {
    */
   static shortestPathFirst (startNode, endNode) {
     startNode.distance = 0
-    startNode.visitedFrom = null
     let unvisited = []
     if (startNode === endNode) {
       return unvisited
     }
     unvisited.push(startNode)
-    while (!endNode.visited && unvisited.sort((a, b) => a.distance - b.distance)[0].distance !== Infinity) {
+    while (!endNode.visited && unvisited[0].distance !== Infinity) {
       const currNode = unvisited.shift()
       const tempNodes = currNode.calcNeighboursTentativeDistance()
       if (tempNodes) unvisited.push(...tempNodes)
       unvisited = [...new Set(unvisited)]
+      unvisited.sort((a, b) => a.distance - b.distance)
     }
     return this.generatePath(endNode)
   }
